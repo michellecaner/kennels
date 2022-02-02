@@ -1,5 +1,4 @@
 import React from "react"
-// does "./animal/AnimalCard" have to be "./animal/AnimalCard.js??"
 import { AnimalCard } from "./animal/AnimalCard"
 import { EmployeeCard } from "./employee/EmployeeCard"
 import { CustomerCard } from "./customer/CustomerCard"
