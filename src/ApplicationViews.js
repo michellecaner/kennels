@@ -4,7 +4,7 @@ import { Home } from "./Home"
 import { AnimalList } from "./components/animal/AnimalList"
 import { LocationCard } from "./components/location/LocationCard"
 import { CustomerList } from './components/customer/CustomerList'
-import { EmployeeCard } from './components/employee/EmployeeCard'
+import { EmployeeList } from './components/employee/EmployeeList'
 
 
 export const ApplicationViews = () => {
@@ -17,7 +17,7 @@ export const ApplicationViews = () => {
                 {/* Render the animal list when http://localhost:3000/animals */}
                 <Route path="/animals" element={<AnimalList />} />
                 <Route path="/customers" element={<CustomerList />} />
-                <Route path="/employees" element={<EmployeeCard />} />
+                <Route path="/employees" element={<EmployeeList />} />
             </Routes>
         </>
     )
