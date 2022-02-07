@@ -1,9 +1,17 @@
 import React from "react"
 import "./Employee.css"
 
-export const EmployeeCard = () => (
-    <section className="employee">
-        <h3 className="employee__name">Emma Beaton</h3>
-        <div className="employee__location">Nashville Kennels North</div>
-    </section>
-)
+export const EmployeeCard = ({ employee }) => {
+    return (
+      <div className="card">
+        <div className="card-content">
+          <picture>
+            <img src={'images/dog.svg'} alt="My Dog" />
+          </picture>
+          <h3>Name: <span className="card-employeename">
+            {employee.name}
+          </span></h3>
+        </div>
+      </div>
+    );
+  }
