@@ -6,7 +6,7 @@ export const LocationCard = ({ location }) => {
       <div className="card">
         <div className="card-content">
           <picture>
-            <img src={'images/dog.svg'} alt="My Dog" />
+            <img src={'images/dog.svg'} alt="Location Icon" />
           </picture>
           <h3>Name: <span className="card-locationname">
             {location.name}
