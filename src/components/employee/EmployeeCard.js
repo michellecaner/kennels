@@ -6,7 +6,7 @@ export const EmployeeCard = ({ employee }) => {
       <div className="card">
         <div className="card-content">
           <picture>
-            <img src={'images/dog.svg'} alt="My Dog" />
+            <img src={'images/dog.svg'} alt="Employee Icon" />
           </picture>
           <h3>Name: <span className="card-employeename">
             {employee.name}
