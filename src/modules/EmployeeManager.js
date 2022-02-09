@@ -2,7 +2,7 @@ const remoteURL = "http://localhost:8088"
 
 export const getEmployeeById = (employeeId) => {
   //be sure your animals have good data and related to a location and customer
-  return fetch(`${remoteURL}/employees/${employeeId}?_expand=locationId&_expand=animalId`)
+  return fetch(`${remoteURL}/employees/${employeeId}?_expand=location&_expand=animal`)
   .then(res => res.json())
 }
 
