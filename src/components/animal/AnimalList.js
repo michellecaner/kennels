@@ -7,6 +7,7 @@ import { getAllAnimals, getAnimalById, deleteAnimal } from '../../modules/Animal
 export const AnimalList = () => {
   // The initial state is an empty array
   const [animals, setAnimals] = useState([]);
+  
   const navigate = useNavigate();
 
   const getAnimals = () => {
