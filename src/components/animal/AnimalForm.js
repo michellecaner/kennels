@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { addAnimal } from '../../modules/AnimalManager';
 import { getAllLocations } from '../../modules/LocationManager';
 import { getAllCustomers } from '../../modules/CustomerManager';
+import { getAllEmployees } from '../../modules/EmployeeManager';
 import './AnimalForm.css'
 
 export const AnimalForm = () => {
@@ -13,7 +14,8 @@ export const AnimalForm = () => {
 		name: "",
 		breed: "",
 		locationId: 0,
-		customerId: 0
+		customerId: 0,
+		employeeId: 0
 	});
 
   // WHY IS THIS GREY'D OUT???
@@ -22,6 +24,7 @@ export const AnimalForm = () => {
 	// you will need the the `getAll` in the LocationsManager and CustomersManager to complete this section
 	const [locations, setLocations] = useState([]);
 	const [customers, setCustomers] = useState([]);
+	const [employees, setEmployees] = useState([]);
 
 	const navigate = useNavigate();
 
@@ -68,14 +71,20 @@ export const AnimalForm = () => {
       getAllCustomers().then(setCustomers)
 	}, []);
 
+			useEffect(() => {
+				//load customer data and setState
+					getAllEmployees().then(setEmployees)
+			}, []);
+
 
 	const handleClickSaveAnimal = (event) => {
 		event.preventDefault() //Prevents the browser from submitting the form
 
 		const locationId = animal.locationId
 		const customerId = animal.customerId
+		const employeeId = animal.employeeId
 
-		if (locationId === 0 || customerId === 0) {
+		if (locationId === 0 || customerId === 0 || employeeId === 0) {
 			window.alert("Please select a location and a customer")
 		} else {
 			//invoke addAnimal passing animal as an argument.
@@ -119,6 +128,19 @@ export const AnimalForm = () => {
 					<select value={animal.customerId} name="customer" id="customerId" onChange={handleControlledInputChange} className="form-control" >
 						<option value="0">Select a customer</option>
 						{customers.map(c => (
+							<option key={c.id} value={c.id}>
+								{c.name}
+							</option>
+						))}
+					</select>
+				</div>
+			</fieldset>
+			<fieldset>
+				<div className="form-group">
+					<label htmlFor="employeeId">Employee: </label>
+					<select value={animal.employeeId} name="employee" id="employeeId" onChange={handleControlledInputChange} className="form-control" >
+						<option value="0">Select a caretaker</option>
+						{employees.map(c => (
 							<option key={c.id} value={c.id}>
 								{c.name}
 							</option>
