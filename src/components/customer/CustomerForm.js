@@ -71,14 +71,14 @@ export const CustomerForm = () => {
 
 		const animalId = customer.animalId
 
-		if (animalId === 0) {
-			window.alert("Please select an animal")
-		} else {
+		// if (animalId === 0) {
+		// 	window.alert("Please select an animal")
+		// } else {
 			//invoke addAnimal passing animal as an argument.
 			//once complete, change the url and display the animal list
 			addCustomer(customer)
 				.then(() => navigate("/customers"))
-		}
+		// }
 	}
 
 	return (
@@ -102,7 +102,7 @@ export const CustomerForm = () => {
 					<input type="text" id="phone" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Customer phone" value={customer.phone} />
 				</div>
 			</fieldset>
-			<fieldset>
+			{/* <fieldset>
 				<div className="form-group">
 					<label htmlFor="animal">Assign animal to customer: </label>
 					<select value={customer.animalId} name="animalId" id="animalId" onChange={handleControlledInputChange} className="form-control" >
@@ -114,7 +114,7 @@ export const CustomerForm = () => {
 						))}
 					</select>
 				</div>
-			</fieldset>
+			</fieldset> */}
 			<button className="btn btn-primary"
 				onClick={handleClickSaveCustomer}>
 				Save Customer

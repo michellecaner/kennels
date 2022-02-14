@@ -20,7 +20,7 @@ export const ApplicationViews = () => {
                 
                 <Route exact path="/locations" element={<LocationList />} />
                 <Route path="/locations/:locationId" element={<LocationDetail />} />
-                <Route path="/customers/create" element={<CustomerForm />} />  
+
                 
                 {/* Render the animal list when http://localhost:3000/animals */}
                 <Route exact path="/animals" element={<AnimalList />} />
@@ -29,6 +29,7 @@ export const ApplicationViews = () => {
 
 
                 <Route path="/customers" element={<CustomerList />} />
+                <Route path="/customers/create" element={<CustomerForm />} />  
                 
                 <Route path="/employees" element={<EmployeeList />} />
             </Routes>
