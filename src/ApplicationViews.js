@@ -12,9 +12,6 @@ import { Login } from './components/auth/Login'
 import { Register } from './components/auth/Register'
 
 
-
-
-
 export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
 
     const PrivateRoute = ({ children }) => {
