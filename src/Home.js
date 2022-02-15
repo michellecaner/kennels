@@ -5,7 +5,7 @@ import { PropsAndState } from './components/PropsAndState'
 export const Home = () => (
     <>
         <h2>Nashville Kennels</h2>
-        <small>Loving care when you're not there.</small>
+        <small>Loving care when you're not there!</small>
 
         <address>
             <div>Visit Us at the Nashville North Location</div>
