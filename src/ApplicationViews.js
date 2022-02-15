@@ -10,6 +10,7 @@ import {LocationDetail} from "./components/location/LocationDetail"
 import { AnimalForm } from "./components/animal/AnimalForm"
 import { Login } from './components/auth/Login'
 import { Register } from './components/auth/Register'
+import { AnimalEditForm } from './components/animal/AnimalEditForm'
 
 
 export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
@@ -50,7 +51,19 @@ export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
                         <AnimalList />
                     </PrivateRoute>
                 } />
-                <Route path="/animals/:animalId" element={<AnimalDetail />} />
+
+                <Route exact path="/animals/:animalId" element={
+                    <PrivateRoute>
+                        <AnimalDetail />
+                    </PrivateRoute>
+                    } />
+
+                <Route path="/animals/:animalId/edit" element={
+                    <PrivateRoute>
+                        <AnimalEditForm />
+                    </PrivateRoute>
+                    } />
+
                 <Route path="/animals/create" element={<AnimalForm />} />
 
 
