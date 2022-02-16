@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CustomerCard } from './CustomerCard';
 import { getAllCustomers, getCustomerById, deleteCustomer } from '../../modules/CustomerManager';
 
 export const CustomerList = () => {
   // The initial state is an empty array
   const [customers, setCustomers] = useState([]);
+
+  const navigate = useNavigate();
 
   const getCustomers = () => {
     // After the data comes back from the API, we
@@ -14,7 +17,7 @@ export const CustomerList = () => {
     });
   };
 
-  // got the animals from the API on the component's first render
+  // got the customers from the API on the component's first render
   useEffect(() => {
     getCustomers();
   }, []);
@@ -26,12 +29,21 @@ export const CustomerList = () => {
 
   // Finally we use .map() to "loop over" the animals array to show a list of animal cards
   return (
-    <div className="container-cards">
-      {customers.map(customer =>
-        <CustomerCard
-          key={customer.id}
-          customer={customer}
-          handleDeleteCustomer={handleDeleteCustomer} />)}
-    </div>
+    <>
+      <section className="section-content">
+        <button type="button"
+            className="btn"
+            onClick={() => {navigate("/customers/create")}}>
+            Create New Customer
+        </button>
+      </section>
+      <div className="container-cards">
+        {customers.map(customer =>
+          <CustomerCard
+            key={customer.id}
+            customer={customer}
+            handleDeleteCustomer={handleDeleteCustomer} />)}
+      </div>
+    </>
   );
 };

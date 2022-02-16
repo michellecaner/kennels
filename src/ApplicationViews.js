@@ -7,10 +7,14 @@ import { CustomerList } from './components/customer/CustomerList'
 import { EmployeeList } from './components/employee/EmployeeList'
 import {AnimalDetail} from "./components/animal/AnimalDetail"
 import {LocationDetail} from "./components/location/LocationDetail"
+import {CustomerDetail} from "./components/customer/CustomerDetail"
 import { AnimalForm } from "./components/animal/AnimalForm"
+import { CustomerForm } from "./components/customer/CustomerForm"
 import { Login } from './components/auth/Login'
 import { Register } from './components/auth/Register'
 import { AnimalEditForm } from './components/animal/AnimalEditForm'
+import { LocationEditForm } from './components/location/LocationEditForm'
+import { CustomerEditForm } from './components/customer/CustomerEditForm'
 
 
 export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
@@ -43,7 +47,14 @@ export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
                         <LocationList />
                     </PrivateRoute>
                         } />
-                <Route path="/locations/:locationId" element={<LocationDetail />} />  
+
+                <Route exact path="/locations/:locationId" element={<LocationDetail />} /> 
+
+                <Route path="/locations/:locationId/edit" element={
+                <PrivateRoute>
+                    <LocationEditForm />
+                </PrivateRoute>
+                } />             
                 
                 {/* Render the animal list when http://localhost:3000/animals */}
                 <Route exact path="/animals" element={
@@ -72,6 +83,25 @@ export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
                         <CustomerList />
                     </PrivateRoute>
                 } />
+
+                <Route exact path="/customers/:customerlId" element={
+                <PrivateRoute>
+                    <CustomerDetail />
+                </PrivateRoute>
+                } />
+
+                <Route path="/customers/:customerId/edit" element={
+                <PrivateRoute>
+                    <CustomerEditForm />
+                </PrivateRoute>
+                } />
+
+                <Route path="/animals/create" element={
+                <PrivateRoute>
+                    <AnimalForm />
+                </PrivateRoute>   
+                } />
+
                 
                 <Route path="/employees" element={
                     <PrivateRoute>

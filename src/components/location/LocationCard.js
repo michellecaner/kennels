@@ -14,6 +14,9 @@ export const LocationCard = ({ location, handleDeleteLocation }) => {
         {location.name}
         </span></h3>
          {/* <p>Address: {location.address}</p> */}
+         <Link to={`/locations/${location.id}/edit`}>
+          <button>Edit</button>
+        </Link>
          <Link to={`/locations/${location.id}`}>
           <button>Details</button>
           </Link>
