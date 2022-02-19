@@ -84,21 +84,21 @@ export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
                     </PrivateRoute>
                 } />
 
-                <Route exact path="/customers/:customerlId" element={
-                <PrivateRoute>
-                    <CustomerDetail />
-                </PrivateRoute>
-                } />
-
                 <Route path="/customers/:customerId/edit" element={
                 <PrivateRoute>
                     <CustomerEditForm />
                 </PrivateRoute>
                 } />
 
-                <Route path="/animals/create" element={
+                <Route exact path="/customers/:customerId" element={
                 <PrivateRoute>
-                    <AnimalForm />
+                    <CustomerDetail />
+                </PrivateRoute>
+                } />
+
+                <Route path="/customers/create" element={
+                <PrivateRoute>
+                    <CustomerForm />
                 </PrivateRoute>   
                 } />
 
