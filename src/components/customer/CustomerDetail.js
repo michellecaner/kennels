@@ -34,7 +34,6 @@ export const CustomerDetail = () => {
       <div className="customer__address">Address: {customer.address}</div>
       <div className="customer__phone">Phone:{customer.phone}</div>
       <div className="customer__email">Email:{customer.address}</div>
-      <div className="customer__animal">Pet(s): {customer.animal?.name}</div>
       <button type="button" disabled={isLoading} onClick={handleDelete}>
           Delete Customer
         </button>
