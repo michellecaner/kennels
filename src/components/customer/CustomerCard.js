@@ -15,11 +15,11 @@ export const CustomerCard = ({ customer, handleDeleteCustomer }) => {
         {/* <p>Address: {customer.address}</p>
         <p>Phone Number: {customer.phone}</p>
         <p>Email: {customer.email}</p> */}
+         <Link to={`/customers/${customer.id}/edit`}>
+          <button>Edit</button>
+        </Link>
         <Link to={`/customers/${customer.id}`}>
           <button>Details</button>
-        </Link>
-        <Link to={`/customers/${customer.id}/edit`}>
-          <button>Edit</button>
         </Link>
         <button type="button" onClick={() => handleDeleteCustomer(customer.id)}>Remove Customer</button>
       </div>
