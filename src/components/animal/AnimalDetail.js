@@ -44,4 +44,4 @@ export const AnimalDetail = () => {
   );
 }
 
-// WHAT??? Immediate properties of an empty object will not break if you try to reference that property but it doesn't actually exist, however nested properties of an empty object will. Use the Optional chaining (?.) operator to prevent nested values from breaking the code. Try replacing "name" with "foo" in the code above ( since location and customer don't have a "foo" property ). Try it with and without the ?. One will cause an error and the other won't.
+// The question mark thing: Immediate properties of an empty object will not break if you try to reference that property but it doesn't actually exist, however nested properties of an empty object will. Use the Optional chaining (?.) operator to prevent nested values from breaking the code. Try replacing "name" with "foo" in the code above ( since location and customer don't have a "foo" property ). Try it with and without the ?. One will cause an error and the other won't.

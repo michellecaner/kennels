@@ -32,7 +32,7 @@ export const LocationDetail = () => {
   return (
     <section className="location">
       <h3 className="location__name">{location.name}</h3>
-      <div className="address">{location.address}</div>
+      <div className="address">Address: {location.address}</div>
       <button type="button" disabled={isLoading} onClick={handleDelete}>
           Close Location
         </button>

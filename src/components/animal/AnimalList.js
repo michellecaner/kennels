@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-//import the components we will need
 import { useNavigate } from 'react-router-dom';
 import { AnimalCard } from './AnimalCard';
 import { getAllAnimals, getAnimalById, deleteAnimal } from '../../modules/AnimalManager';

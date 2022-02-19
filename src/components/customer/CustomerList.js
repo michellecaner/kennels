@@ -17,7 +17,7 @@ export const CustomerList = () => {
     });
   };
 
-  // got the animals from the API on the component's first render
+  // got the customers from the API on the component's first render
   useEffect(() => {
     getCustomers();
   }, []);
@@ -34,7 +34,7 @@ export const CustomerList = () => {
         <button type="button"
             className="btn"
             onClick={() => {navigate("/customers/create")}}>
-            Create Customer
+            Create New Customer
         </button>
       </section>
       <div className="container-cards">
